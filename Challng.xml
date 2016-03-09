@@ -1,88 +1,25 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_whileUntil" id="101" inline="false" x="146" y="73">
-    <field name="MODE">UNTIL</field>
-    <value name="NUMBER">
-      <block type="sensor_button" id="57">
-        <field name="OBJECT">ENTER</field>
-      </block>
-    </value>
-    <statement name="DO">
-      <block type="controls_if" id="44" inline="false">
-        <mutation elseif="1" else="1"></mutation>
-        <value name="IF0">
-          <block type="logic_compare" id="122" inline="true">
-            <field name="OP">GT</field>
-            <value name="A">
-              <block type="sensor_object" id="114">
-                <field name="OBJECT">LEFTFRONT</field>
-              </block>
-            </value>
-            <value name="B">
-              <block type="math_number" id="135">
-                <field name="NUM">80</field>
-              </block>
-            </value>
+  <block type="movement_forward" id="257" x="127" y="52">
+    <next>
+      <block type="robot_delay" id="259" inline="true">
+        <value name="DELAY">
+          <block type="math_number" id="266">
+            <field name="NUM">10000</field>
           </block>
         </value>
-        <statement name="DO0">
-          <block type="movement_setmotors" id="218" inline="true">
-            <value name="BOTHMOVLEFT">
-              <block type="math_number" id="234">
-                <field name="NUM">50</field>
-              </block>
-            </value>
-            <value name="BOTHMOVRIGHT">
-              <block type="math_number" id="235">
-                <field name="NUM">100</field>
-              </block>
-            </value>
-          </block>
-        </statement>
-        <value name="IF1">
-          <block type="logic_compare" id="136" inline="true">
-            <field name="OP">LT</field>
-            <value name="A">
-              <block type="sensor_object" id="137">
-                <field name="OBJECT">LEFTFRONT</field>
-              </block>
-            </value>
-            <value name="B">
-              <block type="math_number" id="138">
-                <field name="NUM">80</field>
-              </block>
-            </value>
-          </block>
-        </value>
-        <statement name="DO1">
-          <block type="movement_setmotors" id="219" inline="true">
-            <value name="BOTHMOVLEFT">
-              <block type="math_number" id="236">
-                <field name="NUM">100</field>
-              </block>
-            </value>
-            <value name="BOTHMOVRIGHT">
-              <block type="math_number" id="237">
-                <field name="NUM">50</field>
-              </block>
-            </value>
-          </block>
-        </statement>
-        <statement name="ELSE">
-          <block type="movement_forward" id="19"></block>
-        </statement>
         <next>
-          <block type="robot_delay" id="21" inline="true">
+          <block type="robot_delay" id="267" inline="true">
             <value name="DELAY">
-              <block type="math_number" id="29">
-                <field name="NUM">100</field>
+              <block type="math_number" id="268">
+                <field name="NUM">5000</field>
               </block>
             </value>
+            <next>
+              <block type="movement_stop" id="278"></block>
+            </next>
           </block>
         </next>
       </block>
-    </statement>
-    <next>
-      <block type="movement_stop" id="247"></block>
     </next>
   </block>
 </xml>
